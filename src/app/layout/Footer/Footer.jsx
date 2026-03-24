@@ -37,7 +37,9 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <Logo variant="logotipo" size={150} />
+          <div className={styles.logoWrapper}>
+            <Logo variant="logotipo" size={150} />
+          </div>
           <p>Agencia de viajes venezolana con experiencia en destinos nacionales e internacionales. Tu aventura es nuestra pasión.</p>
         </div>
 

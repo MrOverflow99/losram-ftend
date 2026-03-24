@@ -1,6 +1,7 @@
 /* src/app/layout/Footer/Footer.module.css */
 .footer {
-  background-color: var(--color-dark);
+  /* #0C1A2E — más oscuro que el azul marino del logo, los colores del brand resaltan bien */
+  background-color: #0C1A2E;
   color: var(--color-text-light);
   padding: var(--space-xl) 0 0;
 }
@@ -12,6 +13,11 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: var(--space-xl);
+}
+
+/* Sin filter — los colores del SVG se muestran tal cual sobre el fondo oscuro */
+.logoWrapper img {
+  display: block;
 }
 
 .brand p {

@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { label: 'Inicio', to: ROUTES.HOME },
   { label: 'Servicios', to: '/#servicios' },
   { label: '¿Por qué nosotros?', to: '/#por-que' },
-  { label: 'Contacto', to: ROUTES.REQUEST },
 ];
 
 export default function Navbar() {
@@ -53,7 +52,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : styles.transparent}`}>
       <div className={styles.inner}>
         <Link to={ROUTES.HOME} className={styles.logoLink} aria-label="LOSRAM - Inicio">
-          <Logo variant="isotipo" size={40} />
+          <Logo variant="isotipo" size={70} />
         </Link>
 
         <button

@@ -2,8 +2,8 @@
 
 export default function Logo({ variant = 'isotipo', size }) {
   const src = variant === 'logotipo'
-    ? '/assets/logo-logotipo.png'
-    : '/assets/logo-isotipo.png';
+    ? '/assets/logo_g.svg'
+    : '/assets/logo.svg';
 
   const alt = variant === 'logotipo'
     ? 'LOSRAM Viajes y Turismo'
