@@ -1,0 +1,110 @@
+/* src/pages/HomePage/sections/HowItWorksSection.module.css */
+.howItWorks {
+  background-color: var(--color-surface);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(12.5%);
+  right: calc(12.5%);
+  height: 2px;
+  background: linear-gradient(to right, var(--color-accent), var(--color-deep-blue));
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.stepNumber {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-deep-blue));
+  color: var(--color-text-light);
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-card);
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .steps::before {
+    top: 0;
+    bottom: 0;
+    left: 27px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--space-md);
+  }
+
+  .stepContent {
+    flex: 1;
+  }
+}

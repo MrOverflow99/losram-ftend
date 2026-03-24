@@ -1,0 +1,219 @@
+/* src/pages/RequestPage/RequestPage.module.css */
+.page {
+  min-height: 100vh;
+  background-color: var(--color-surface);
+  padding-top: 100px;
+  padding-bottom: var(--space-xxl);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-dark) 100%);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.heroInner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.formCard {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hover);
+  padding: var(--space-xl);
+}
+
+/* Step indicator */
+.stepIndicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.stepDot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.stepDot span {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-alt);
+  border: 2px solid #cde0eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: all var(--transition-slow);
+}
+
+.stepDot p {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.stepDot.stepActive span {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-light);
+}
+
+.stepDot.stepActive p {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.stepLine {
+  flex: 1;
+  height: 2px;
+  background: #cde0eb;
+  margin: 0 var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* Form fields */
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.row2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+/* Checkbox style chips */
+.checkboxLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.checkboxGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.styleChip {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  border: 1.5px solid #cde0eb;
+  background: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.styleChip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.styleChip.selected {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-light);
+}
+
+/* Form actions */
+.formActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-surface-alt);
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--color-white);
+  border-radius: var(--radius-full);
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error banner */
+.errorBanner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+/* Success state */
+.successState {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.successIcon {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.successMsg {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+@media (max-width: 560px) {
+  .formCard {
+    border-radius: 0;
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .row2col {
+    grid-template-columns: 1fr;
+  }
+}

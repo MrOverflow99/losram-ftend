@@ -1,0 +1,4 @@
+/* src/shared/ui/Section/Section.module.css */
+.section {
+  padding: var(--space-xxl) 0;
+}

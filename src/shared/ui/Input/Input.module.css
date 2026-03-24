@@ -1,0 +1,38 @@
+/* src/shared/ui/Input/Input.module.css */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1.5px solid #cde0eb;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(29, 156, 210, 0.15);
+}
+
+.input.error {
+  border-color: #e05252;
+}
+
+.errorMsg {
+  font-size: 0.8rem;
+  color: #e05252;
+}

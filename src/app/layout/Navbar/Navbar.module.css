@@ -1,0 +1,150 @@
+/* src/app/layout/Navbar/Navbar.module.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color var(--transition-slow), box-shadow var(--transition-slow);
+  padding: var(--space-md) 0;
+}
+
+.navbar.transparent {
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: var(--color-white);
+  box-shadow: 0 2px 20px rgba(12, 62, 90, 0.10);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.navLink {
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition-base);
+  position: relative;
+}
+
+.navbar.transparent .navLink {
+  color: var(--color-text-light);
+}
+
+.navbar.scrolled .navLink {
+  color: var(--color-text-primary);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-slow);
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  width: 100%;
+}
+
+.navbar.transparent .navLink:hover {
+  color: var(--color-text-light);
+  opacity: 0.8;
+}
+
+.navbar.scrolled .navLink:hover {
+  color: var(--color-accent);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: var(--space-xs);
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-slow);
+}
+
+.navbar.transparent .hamburger span {
+  background-color: var(--color-white);
+}
+
+.navbar.scrolled .hamburger span {
+  background-color: var(--color-dark);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-md);
+    background-color: var(--color-white);
+    box-shadow: 0 8px 24px rgba(12, 62, 90, 0.12);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .navLink {
+    color: var(--color-text-primary) !important;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-surface-alt);
+    font-size: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
